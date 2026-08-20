@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/kennethalford/Documents/cloud-routines/fetch_show_transcript.sh</string>
+        <string>/Users/kennethalford/.local/bin/fetch-show-transcript.sh</string>
         <string>market-mondays</string>
     </array>
     <key>StartCalendarInterval</key>
@@ -20,8 +20,8 @@
         <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/kennethalford/Documents/cloud-routines/launchd-mm.log</string>
+    <string>/Users/kennethalford/.local/state/cloud-routines-relay-logs/launchd-mm.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/kennethalford/Documents/cloud-routines/launchd-mm.log</string>
+    <string>/Users/kennethalford/.local/state/cloud-routines-relay-logs/launchd-mm.log</string>
 </dict>
 </plist>

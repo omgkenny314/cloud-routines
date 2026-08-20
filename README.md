@@ -23,3 +23,16 @@ cp launchd/com.kennethalford.show-transcript-tt.plist ~/Library/LaunchAgents/ &&
 Logs: `fetch.log` and `launchd-*.log` in the repo folder (gitignored).
 
 Known clock landmines: the Mac's system clock is Pacific while Kenny lives Central (launchd times compensate), and the cloud routines' cron times are pinned to UTC, so they drift one hour earlier local when daylight saving ends in November. A Todoist reminder exists for the November re-check.
+
+## Relay relocation (2026-08-20)
+The transcript relay was dead Aug 2–20: launchd cannot read `~/Documents`
+(macOS privacy), so the old plists pointing at a script inside this checkout
+failed every week with "Operation not permitted". The relay now lives outside
+Documents: script at `~/.local/bin/fetch-show-transcript.sh`, working clone at
+`~/.local/state/cloud-routines-relay`, logs at
+`~/.local/state/cloud-routines-relay-logs/`, failure alerts via Double-O HQ
+push (deployed `~/.local/lib/double-o/push_notify.py`). The copy of the script
+in this repo is documentation; the deployed copy is the one that runs. The
+Documents checkout of this repo is pull-only (Finn's Island lesson ingest).
+The hourly Yahki appointment cloud routine was also retired 2026-08-20,
+replaced by a local watcher: `~/.local/bin/yahki-check.sh` (launchd, hourly).
